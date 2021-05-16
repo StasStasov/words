@@ -1,0 +1,55 @@
+.button {
+  display: block;
+  padding: 0.5rem;
+  font-weight: bold;
+  background-color: var(--color-primary);
+  border: thin solid var(--color-border);
+  color: black;
+  outline: none;
+  cursor: pointer;
+  transition: 300ms;
+  box-shadow: 0 2px 4px var(--color-shadow);
+  box-sizing: border-box;
+}
+.button:hover {
+  box-shadow: none;
+}
+.button:active {
+  box-shadow: inset 0 2px 4px var(--color-shadow);
+}
+.button:disabled {
+  box-shadow: none;
+  opacity: 0.3;
+  cursor: default;
+}
+.danger {
+  background-color: red;
+  color: white;
+}
+.action {
+  background-color: peru;
+  color: white;
+}
+.s {
+  font-size: 0.7rem;
+  padding: 0.2rem;
+}
+.m {
+  font-size: 0.8rem;
+  padding: 0.5rem;
+}
+.l {
+  font-size: 1rem;
+  padding: 1rem;
+}
+.xl {
+  font-size: 1.5rem;
+  padding: 1.5rem;
+}
+.fullsize {
+  width: 100%;
+}
+.fit {
+  width: fit-content;
+  height: fit-content;
+}
