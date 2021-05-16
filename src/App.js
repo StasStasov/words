@@ -6,6 +6,7 @@ import Add from './components/Add/Add.js'
 import List from './components/List/List.js'
 import Quiz from './components/Quiz/Quiz.js'
 import Header from './components/Header/Header'
+import Footer from './components/Footer/Footer'
 import { useCutter } from './hooks/cutter.hook'
 
 const WORDS_NAME = 'words'
@@ -65,6 +66,7 @@ export default function App() {
             />
           </Route>
         </Switch>
+        <Footer />
       </div>
     </HashRouter>
   )

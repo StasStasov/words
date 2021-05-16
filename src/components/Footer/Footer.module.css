@@ -1,0 +1,23 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  background-color: var(--color-second-bg);
+  box-shadow: 0 -2px 4px var(--color-shadow);
+}
+.link {
+  padding: .5rem;
+  text-decoration: none;
+  color: var(--color-accent);
+  font-weight: bold;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+}
+.link:hover {
+  border-top: 4px solid var(--color-accent);
+  border-bottom: 4px solid var(--color-accent);
+  transition: 300ms;
+}
