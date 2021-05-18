@@ -213,7 +213,7 @@ export default function Home({
     setMockLoaded(true)
   }
 
-  const handleClearStorage = () => clearWords
+  const handleClearStorage = clearWords
 
   return (
     <main className={['main', styles.home].join(' ')}>
