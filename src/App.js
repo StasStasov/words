@@ -27,6 +27,10 @@ export default function App() {
     setWords(prev => ({ ...prev, ...words }))
   }
 
+  const clearWords = () => {
+    setWords({})
+  }
+
   const deleteWord = word => {
     setWords(prev => {
       const state = { ...prev }
@@ -59,10 +63,12 @@ export default function App() {
           <Route exact path='/'>
             <Home
               words={words}
+              clearWords={clearWords}
               isEngHide={isEngHide}
               radioOption={radioOption}
               changeLangMode={changeLangMode}
               changeListMode={changeListMode}
+              addWordsFromFile={addWordsFromFile}
             />
           </Route>
         </Switch>

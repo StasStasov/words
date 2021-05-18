@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './Home.module.css'
 import RadioGroup from '../Radio/RadioGroup'
 import Radio from '../Radio/Radio'
@@ -180,9 +180,11 @@ const mock = {
 export default function Home({
   words,
   isEngHide,
+  clearWords,
   radioOption,
   changeLangMode,
-  changeListMode
+  changeListMode,
+  addWordsFromFile
 }) {
   const handleChange = e => changeLangMode(e.target.checked)
 
@@ -204,6 +206,14 @@ export default function Home({
       console.error(e)
     }
   }
+
+  const [mockLoaded, setMockLoaded] = useState(false)
+  const handleMockButton = () => {
+    addWordsFromFile(mock)
+    setMockLoaded(true)
+  }
+
+  const handleClearStorage = () => clearWords
 
   return (
     <main className={['main', styles.home].join(' ')}>
@@ -235,6 +245,15 @@ export default function Home({
           <li className={styles.item}>
             <span className={styles.title}>Скачать слова:</span>
             <Button onClick={handleExportButton}>Download</Button>
+          </li>
+          <li className={styles.item}>
+            <span className={styles.title}>Очистить хранилище слов:</span>
+            <Button onClick={handleClearStorage}>Clear</Button>
+          </li>
+          <li className={styles.item}>
+            <Button size='fullsize' onClick={handleMockButton} disabled={mockLoaded}>
+              { mockLoaded ? 'Готово' : 'Подгрузить пробный список слов'}
+            </Button>
           </li>
         </ul>
       </div>
